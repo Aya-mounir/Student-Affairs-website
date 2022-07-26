@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add New Student</title>
+    <link rel="stylesheet" href="{% static 'css/add&edit.css'%}" />
+  </head>
+  <body>
+    <nav>
+      <ul class="nav_links">
+          <li class="nav">
+              <a href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav">
+              <a href="{% url 'add' %}">Add Student</a>
+          </li>
+          <li class="nav">
+              <a href="{% url 'edit' %}">Edit</a>
+          </li>
+          <li class="nav">
+              <a href="{% url 'assignment' %}">Assign Department</a>
+          </li>
+          <li class="nav">
+              <a href="{% url 'view' %}">View Students</a>
+          </li>
+          <li class="nav">
+              <a href="{% url 'search' %}">Search</a>
+          </li>
+          <li class="nav">
+              <a href="{% url 'all' %}"><button class="btn" >All Projects</button></a>
+          </li>
+      </ul>
+  </nav>
+      {% for message in messages %}
+      <div style="background-color : #df6609;" class="message" >
+        {{message}}
+      </div>
+      {% endfor %}
+    <section>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="container">
+          <h2>Add New Student</h2>
+          <div class="inBox">
+            
+            <label>Name</label><br />
+            <input type="text" id="Name"  name="name"/>
+            <br />
+            <br />
+            <label>Id</label><br />
+            <input type="number" id="Id" name="id" />
+            <br />
+            <br />
+            <label>Gpa</label><br />
+            <input type="number" step="0.01"  min="0" id="Gpa" name="gpa" />
+            <br />
+            <br />
+            <label>Email</label><br />
+            <input type="email" id="Email" name="Email" />
+            <br />
+            <br />
+            <label>Mobile Number</label><br />
+            <input type="tel" placeholder="+02" +02 id="Mobile" name="mob"/>
+            <br />
+            <br />
+            <label for="slevel"> level </label> <br />
+            <input id="slevel" type="number" min="1" max="4" itemid="Level" name="level" />
+            <br />
+            <br />
+            <label>Date of Birth</label><br />
+            <input type="date" id="Date" name="date" />
+          </div>
+          <div>
+            <br />
+            <label>Gender:</label>
+            <br />
+            <input id="m" type="radio" name="gender" value="male"  />
+            <label for="m">Male</label>
+            <br />
+            <input id="f" type="radio" name="gender" value="female" />
+            <label for="f">Female</label>
+          </div>
+          <br />
+          <div class="inBox">
+            <label for="status" >Status</label>
+            <input list="status"  name="status" >
+            <datalist id="status">
+                <option value="Active">
+                <option value="Inactive">
+            </datalist>
+          </div>
+          <br />
+          <label for="depart">Department</label>
+          <select name="department" id="depart">
+            <optgroup label>
+              <option >CS</option>
+              <option >IS</option>
+              <option >AI</option>
+              <option >IT</option>
+              <option >DS</option>
+              <option >General</option>
+
+            </optgroup>
+          </select>
+          <br />
+          <br />
+          <button class="sub" id="Submit" type="submit" name="submit">Submit</button>
+          <button class="dele" onclick="del()" id="Delete" name="delete">Delete</button>
+        </div>
+      </form>
+    </section>
+    <script src="{% static 'js/add.js'%}"></script>
+  </body>
+</html>

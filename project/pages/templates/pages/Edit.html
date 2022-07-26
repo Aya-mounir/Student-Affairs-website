@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit</title>
+    <link rel="stylesheet" href="{% static 'css/add&edit.css'%}" />
+  </head>
+  <body>
+    <div class="Edit">
+    <nav>
+      <ul class="nav_links">
+          <li class="nav">
+              <a href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav">
+              <a href="{% url 'add' %}">Add Student</a>
+          </li>
+          <li class="nav">
+            <a href="{% url 'edit' %}">Edit</a>
+          </li>
+          <li class="nav">
+              <a href="{% url 'assignment' %}">Assign Department</a>
+          </li>
+          <li class="nav">
+              <a href="{% url 'view' %}">View Students</a>
+          </li>
+          <li class="nav">
+              <a href="{% url 'search' %}">Search</a>
+          </li>
+          <li class="nav">
+              <a href="{% url 'all' %}"><button class="btn" >All Projects</button></a>
+          </li>
+      </ul>
+  </nav>
+ 
+   <section>
+        <form action="updaterecord/{{ s.Id }}" method="post">
+          {% csrf_token %}
+          <div class="container">
+            <h2>Edit Info</h2>
+
+            <div class="inBox">
+              <label>Name</label><br />
+              <input type="text" id="Name" value="{{s.Name}}" name="Name" />
+              <br />
+              <br />
+              <label>Id</label><br />
+              <input type="number" id="Id"  value="{{s.Id}}" name="Id" disabled/>
+              <br />
+              <br />
+              <label>Gpa</label><br />
+              <input type="number" step="0.01" max="4" min="0" id="Gpa"  value="{{s.Gpa}}" name="Gpa"/>
+              <br />
+              <br />
+              <label>Email</label><br />
+              <input type="email" id="Email" value="{{s.Email}}" name="email"/>
+              <br />
+              <br />
+
+              <label>mobile number</label><br />
+              <input type="tel" placeholder="+20" id="Mobile" value="{{s.Mobile}}" name="Mob" />
+              <br />
+              <br />
+              <label for="slevel">level </label>
+              <br />
+              <input id="slevel" type="number" value="{{s.Level}}" name="Level" />
+              <br />
+              <br />
+              <label>Date of Birth</label><br />
+              <input type="date" id="Date" name="date" value="{{s.Date}}" />
+              
+              <br /><br>
+
+              <div>
+                <label for="gander" >Gander</label>
+                <input list="gander" value="{{s.Gender}}" name="Gender" >
+                <datalist id="gander">
+                    <option value="Male">
+                    <option value="Female">
+                </datalist>
+              </div>
+            <br />
+            <div class="inBox">
+              <label for="status" >Status</label>
+              <input list="status" value="{{s.Status}}" name="Status" >
+              <datalist id="status">
+                  <option value="Active">
+                  <option value="Inactive">
+              </datalist>
+            </div>
+            <br />
+            <label for="depart">Department</label>
+            <input name="depart" id="depart" value="{{s.Department}}" disabled>
+              <datalist label>
+                <option value="CS">
+                <option value="IS">
+                <option value="SI">
+                <option value="IT">
+                <option value="DS">
+              </datalist>
+             </div>
+            <br />
+            <br />
+            <input type="submit" value="Update" class="dele">
+            <a href="delete/{{s.Id}}" class="dele" onclick="del()"> Delete </a>
+          </div>
+        </form>
+      </section>
+    </div>
+    <script src="{% static 'js/Edit.js'%}"></script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+
+body{
+  background-color: #ece7e7;
+
+}
+h1{
+  color: #212832;
+  text-align: center;
+  margin-top: 20px;
+}
+h2{
+  text-align: center;
+  width: 100%;
+}
+h1::before{
+  position: absolute;
+  text-align: center;
+  content: "";
+  color: #212832;
+  width: 100px;
+  height: 1.5px;
+  background-color: #212832;
+  top: 0;
+  margin: 71px 0px 0px 36px;
+}
+h1::after{
+  position: absolute;
+  text-align: center;
+  content: "";
+  color: #212832;
+  width: 50px;
+  height: 0.5px;
+  background-color: #212832;
+  top: 0;
+  margin: 80px -123px 0px ;
+}
+.btn{
+  color: #ece7e7;
+  background-color: #df6609;
+  width: 50%;
+  height: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  font-style: initial;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 2px solid #df6609;
+
+}
+.btn:hover{
+  color: #212832;
+  background-color: #ece7e7;
+  border: 2px solid #212832;
+}
+
+.row{
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  justify-self: center;
+  margin-top: 10px;
+}
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px; 
+  margin: 25px;
+
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.40);
+}
+.flip-card:active{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.40);
+
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #ece7e7;
+  color: #212832;
+
+}
+
+.flip-card-back {
+  background-color: #b6b0b0;
+  color:  #212832;
+  transform: rotateY(180deg);
+  font-weight: bold;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}

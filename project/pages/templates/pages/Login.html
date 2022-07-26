@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+
+
+    <title>Login Page</title>
+</head> 
+<body>
+    <nav>
+        <ul class="nav_links">
+    
+            <li class="nav">
+            </li>
+        </ul>
+    </nav>
+    <div class="login"> 
+        <div class="s">
+            <h1> 
+                Welcome to Student Affairs Website
+            </h1>
+        </div>
+        <div class="container">
+            <h2>Login</h2>
+        <form method="post" action="{% url 'home'%}" onsubmit="return login()">
+            {% csrf_token %}
+            <label>Username</label>        
+            <input type="text" name="username" placeholder="Username is Nehal" id="name"  required>
+            <br>
+            <br>
+            <label >Password</label>
+            <input type="password" name="password" placeholder="Password is 20200251" id="pass" required>
+            <br>
+            <br>
+    
+            <button value="save" class="btn" onclick=login(event)>Login</button >
+            <br>
+            <br>
+    
+           
+            </div>
+        </form>
+            
+        <script src="{%static 'js/Login.js'%}"></script>   
+</body>
+</html>

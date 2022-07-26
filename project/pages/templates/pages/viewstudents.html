@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>view students</title>
+    <link rel="stylesheet" href="{% static 'css/view.css' %}">
+
+  <body>
+    <div class="viewStudents">
+      <nav>
+        <ul class="nav_links">
+            <li class="nav">
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav">
+                <a href="{% url 'add' %}">Add Student</a>
+            </li>
+            <li class="nav">
+              <a href="{% url 'edit' %}">Edit</a>
+            </li>
+            <li class="nav">
+                <a href="{% url 'assignment' %}">Assign Department</a>
+            </li>
+            <li class="nav">
+                <a href="{% url 'view' %}">View Students</a>
+            </li>
+            <li class="nav">
+                <a href="{% url 'search' %}">Search</a>
+            </li>
+            <li class="nav">
+                <a href="{% url 'all' %}"><button class="btn" >All Projects</button></a>
+            </li>
+        </ul>
+    </nav>
+      <section>
+        <form action="" method="post">
+          <h1>View Active and Inactive Students</h1>
+        
+        <table class="table">
+          <thead>
+            <header>
+              <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Gpa</th>
+                <th>Department</th>
+                <th>Level</th>
+                <th>Status</th>
+                <th>Change Status</th>
+              </tr>
+            </header>
+          </thead> 
+        <tbody>
+          {% for x in students %}
+           <tr>
+             <td>{{x.Name}}</td>
+             <td>{{x.Id}}</td>
+             <td>{{x.Gpa}}</td>
+             <td>{{x.Department}}</td>
+             <td>{{x.Level}}</td>
+             <td >{{x.Status}}</td>
+
+             <td><br> <a class="btn" href="active/{{x.Id}}" >Change Status</a> <br><br></td>
+           </tr>
+           {% endfor %}
+          </tbody>
+        </table>
+        </form>
+      </section>
+    </div>
+    <script src="{%static 'js/View.js'%}"></script>
+  </body>
+</html>

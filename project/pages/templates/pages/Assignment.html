@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assign Department</title>
+    <link rel="stylesheet" href="{% static 'css/assign.css' %}">
+</head>
+<body>
+    <div class="assign">
+        <nav>
+            <ul class="nav_links">
+                <li class="nav">
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav">
+                    <a href="{% url 'add' %}">Add Student</a>
+                </li>
+                <li class="nav">
+                    <a href="{% url 'edit' %}">Edit</a>
+                </li>
+                <li class="nav">
+                    <a href="{% url 'assignment' %}">Assign Department</a>
+                </li>
+                <li class="nav">
+                    <a href="{% url 'view' %}">View Students</a>
+                </li>
+                <li class="nav">
+                    <a href="{% url 'search' %}">Search</a>
+                </li>
+                <li class="nav">
+                    <a href="{% url 'all' %}"><button class="btn" >All Projects</button></a>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            {%for message in messages%}
+            <div class="message" style="font-size: 20px;
+            text-align: center;
+            background-color: #df6609 ;
+            color: #ece7e7;">
+            {{message}}</div>
+            {% endfor %}            
+            
+            <form action="assigndepart/{{ s.Id }}" method="post">
+                {% csrf_token %}
+                <div class="container">
+                    <h2>Assign Department</h2>
+                  
+                    <br/>
+                    <div>
+                        <label for="sdep">Set department</label>
+                        <input list="sdep" name="depart" >
+                        <datalist id="sdep">
+                            <option value="CS">
+                            <option value="IT">
+                              <option value="DS">
+                            <option value="AI">
+                            <option value="IS">
+                        </datalist>
+                    </div>
+                    <br/>
+                
+                    <input class="btn" onclick="sl(event)" value="Assign" type="submit" style="width:25%">
+                    <br/>
+                    <br/>
+                    <label>Student Name: {{s.Name}}</label>
+                    <br/><br>
+                    <label>Student ID:{{s.Id}}</label>
+                </div>
+            </form>
+        </section>
+    </div>
+    <script src="{% static 'js/Assign.js'%}">
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Search</title>
+    <link rel="stylesheet" href="{% static 'css/search.css'%}" />
+  </head>
+  <body>
+    <div class="search">
+      <nav>
+        <ul class="nav_links">
+            <li class="nav">
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav">
+                <a href="{% url 'add' %}">Add Student</a>
+            </li>
+            <li class="nav">
+              <a href="{% url 'edit' %}">Edit</a>
+            </li>
+            <li class="nav">
+                <a href="{% url 'assignment' %}">Assign Department</a>
+            </li>
+            <li class="nav">
+                <a href="{% url 'view' %}">View Students</a>
+            </li>
+            <li class="nav">
+                <a href="{% url 'search' %}">Search</a>
+            </li>
+            <li class="nav">
+                <a href="{% url 'all' %}"><button class="btn" >All Projects</button></a>
+            </li>
+        </ul>
+    </nav>
+      <div class="container">
+        <form action="{% url 'search' %} " name="search">
+          {% csrf_token %}
+        <h2>Find Student</h2>
+        <label>Search </label>
+        <br />
+        <input type="search" placeholder="Enter Student Name" id="serch" name="search"/>
+        <br /><br />
+        <button class="btn" >search</button>
+        <br><br>
+        {% for x in posts %}
+        {{x.Name}}
+        {{x.Id}}
+        <a href="Edit/{{x.Id}}" class="btn"> Edit</a>
+        <a href="Assignment/{{x.Id}} " class="btn" > Assign </a>
+        <br><br><hr><br>
+        {% endfor %}
+        </form>
+      </div>
+    </div>
+    <script src="{% static 'js/Search.js'%}"></script>
+  </body>
+</html>

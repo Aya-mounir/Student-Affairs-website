@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/allProjects.css' %}">
+    
+
+    <title>FCI Websites</title>
+</head>
+<body>
+    <div class="new">
+        <h1>Projects Page</h1>
+        <div class="row">
+            <div class="flip-card col-sm-12 ">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="static/images/humanResoursesPhoto.jpg" alt="Avatar" style="width:300px;height: 200px;">
+                    <h3>Human Resources</h3>
+                  </div>
+                  <div class="flip-card-back">
+                    <h2>Human Resourses</h2>
+                    <a href="#" class="btn" onclick="choose()">
+                    <div >Go to site</div>
+                     </a>
+                  </div>
+                </div>
+              </div>
+            <div class="flip-card col-sm-12 ">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="static/images/studentAffairsPhoto.jpeg" alt="Avatar" style="width:300px;height: 200px;">
+                    <h3>StudentAffairs</h3>
+                  </div>
+                  <div class="flip-card-back">
+                    <h2>Student Affairs</h2>
+                    <a href="{% url 'login' %}" class="btn">
+                    <div >Go to site</div>
+                    </a>  
+                  </div>
+                </div>
+              </div>
+        </div>        
+        <div class="row">
+            <div class="flip-card col-sm-12 ">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="static/images/higherStudyPhoto.jpg" alt="Avatar" style="width:300px;height: 200px;">
+                    <h3>Higher Studies</h3>
+                  </div>
+                  <div class="flip-card-back">
+                    <h2>Higher Studies</h2>
+                    <a href="#" class="btn" onclick="choose()">
+                    <div > Go to site</div>
+                     </a>
+                  </div>
+                </div>
+              </div>
+            <div class="flip-card col-sm-12 ">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="static/images/laboratoryTrackingPhoto.jpg" alt="Avatar" style="width:300px;height: 200px;">
+                    <h3>Laboratory Trackig</h3>
+                  </div>
+                  <div class="flip-card-back">
+                    <h2>Laboratory Tracking</h2>
+                    <a href="#" class="btn" onclick="choose()">
+                    <div>Go to site</div>
+                     </a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+        
+     <script src="{%static 'js/allProjects.js'%}">  </script> 
+        
+</body>
+</html>

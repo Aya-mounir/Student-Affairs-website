@@ -1,0 +1,166 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul,li, a {
+    color: #f2f2f2;
+    text-decoration: none;
+    text-align: left;
+    background-color: #212832;
+}
+header{
+    justify-content:space-between;
+    align-items: center;
+    padding: 30px ;
+    list-style: none;
+}
+.nav_links li {
+    display: inline-block;
+    width: auto;
+    overflow: auto;
+    padding-left: 30px;
+    margin: 10px 0;
+    margin-left: 5px;
+}
+
+.nav_links li:hover{
+    color: #b6b0b0;
+    cursor: pointer;
+
+}
+
+body{
+    background-color:#f2f2f2;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body .container{ 
+    display: flex;
+    justify-content: center;
+}
+.ss {
+    text-align: center;
+    margin-top: 200px;
+    width: 600px;
+    background-color:  rgb(22 31 12 / 52%);
+    border-radius: 20px;
+    
+}
+.ss q{
+    font-size: 15px;
+    font-weight:bold ;
+}
+.ss h1 {
+   font-size: 40px;
+    margin-bottom: 15px;
+}
+
+h2{
+    text-align: center;
+}
+
+.table {
+    font-family:initial;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 200px;
+      }
+  
+  .table td, .table th {
+    border: 1px solid #212832;
+    padding: 8px;
+    width:10px;
+    height: 35px;
+  }
+  
+  .table tr:hover {
+      background-color: #ece7e7;
+    }
+  
+  .table th {
+    padding-top: 12px;
+    text-align: center;
+    padding-bottom: 12px;
+    background-color: #b6b0b0;
+    color: #212832;
+  }
+nav .btn{
+    margin-left: 540px;
+}
+.btn{
+    color: #f2f2f2;
+    background-color: #df6609;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-style:inherit;
+    font-weight:bold;
+    border: 2px solid #df6609;
+
+}
+.btn1 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;}
+
+  
+.btn1 :hover{
+    background-color: #df6609;
+
+}
+
+.btn:hover {
+    color: #212832;
+    background-color: #ece7e7;
+    border: 2px solid #212832;
+}
+.stat{
+    margin-left: 50px;
+    font-size: large;
+}
+h1{
+    font-size: 50px;
+    font-style:initial;
+    color: #212832;
+    text-align: center;
+}
+ h1::before{
+    position: absolute;
+    text-align: center;
+    content: "";
+    color: #212832;
+    width: 200px;
+    height: 1.5px;
+    background-color: #212832;
+    margin: 59px 0px 0px 239px;
+  }
+  h1::after{
+    position: absolute;
+    text-align: center;
+    content: "";
+    color: #212832;
+    width:100px;
+    height: 0.5px;
+    background-color: #212832;
+    margin: 66px -423px 0px ;
+  } 
+  label{
+    font-size: 18px; 
+    font-weight: bold;
+    font-style: normal;
+    color: #212832;
+}
+tr{
+    text-align: center;
+}

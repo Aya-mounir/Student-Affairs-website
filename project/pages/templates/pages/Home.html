@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student community</title>
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+</head>
+<body>
+    <div name="home">
+        <nav>
+            <ul class="nav_links">
+                <li class="nav">
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav">
+                    <a href="{% url 'add' %}">Add Student</a>
+                </li>
+               
+
+                <li class="nav">
+                    <a href="{% url 'assignment' %}">Assign Department</a>
+                </li>
+                <li class="nav">
+                    <a href="{% url 'view' %}">View Students</a>
+                </li>
+                <li class="nav">
+                    <a href="{% url 'search' %}">Search</a>
+                </li>
+                <li class="nav">
+                    <a href="{% url 'all' %}"><button class="btn" >All Projects</button></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="ss">
+                <h1>Welcome to FCI Student Affairs</h1>
+                <q>
+                    you can add a new student to the system, update an existing student information,  delete an existing student data,
+                     search for active students and assign a department through
+                    the student's department assignment page.
+                </q>
+            </div>
+        </div>
+
+    </div>
+    <script src="{% static 'js/home.js'%}"></script>
+
+</body>
+</html>

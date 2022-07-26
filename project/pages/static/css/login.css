@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul,li, a {
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    background-color: #212832;
+}
+.nav_links li {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    padding-left: 30px;
+    margin: 10px 0;
+    margin-left: 5px;
+}
+body{ 
+    background-color:#f2f2f2;
+}
+
+.btn {
+    color: #f2f2f2;
+    background-color: #df6609;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-style:inherit;
+    font-weight:bold;
+    border: 2px solid #df6609;
+    
+  }
+  
+.btn:hover {
+    color: #212832;
+    background-color: #ece7e7;
+    border: 2px solid #212832;
+  }
+
+  .nav_links li:hover{
+    color: #b6b0b0;
+    cursor: pointer;
+
+}
+
+.s {
+    text-align: center;
+    margin-top: 50px;
+}
+.s q{
+    font-size: 18px;
+    font-weight: bold;
+}
+h1{
+    font-size: 50px;
+    font-style:initial;
+    color: #212832;
+}
+ h1::before{
+    position: absolute;
+    text-align: center;
+    content: "";
+    color: #212832;
+    width: 200px;
+    height: 1.5px;
+    background-color: #212832;
+    margin: 59px 0px 0px 268px;
+  }
+  h1::after{
+    position: absolute;
+    text-align: center;
+    content: "";
+    color: #212832;
+    width:100px;
+    height: 0.5px;
+    background-color: #212832;
+    margin: 68px -448px 0px ;
+  } 
+.container{
+    padding: 10px;
+    position:absolute;
+    margin-top:300px ;
+    left: 50%;
+    width: 500px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background-color:#b6b0b0;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+
+}
+.container p{
+    font-size: 15px; 
+    font-weight:lighter; 
+    font-style:normal; 
+    color: #212832;
+}
+.container h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #212832;
+    text-align: center;
+}
+input[type =password],input[type =text]{
+    border: none;
+    border-radius: 2px;
+    margin: 8px 10x;
+    display:inline-table;
+    box-sizing:border-box;
+    width: 90%;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #212832;
+    border-bottom: 1px solid #f2f2f2;
+    outline: none;
+    background-color: transparent;
+}
+label{
+    font-size: 18px; 
+    font-weight: bold;
+    font-style: normal;
+    color: #212832;
+}
